@@ -1,9 +1,10 @@
+from sys import exit
+
 def start():
 	print "What would you like to do?"
 	print "1) Start a new session"
 	print "2) View most recent session"
-	print "3) Add new employee(s) to current session"
-	print "4) Remove employee(s) from current session"
+	print "3) Quit"
 	
 	while True:
 		next = raw_input("> ")
@@ -12,17 +13,16 @@ def start():
 			session(True)
 		
 		elif next == "2":
-			session(False)		#pulls up the last saved txt file with all the assigned schedules
+			session(False)
 		
 		elif next == "3":
-			add()
-		
-		elif next == "4":
-			remove()	#removes employee from txt doc and all lists
+			exit()
 		
 		else:
-			print "I don't understand. Try typing 1, 2, 3, or 4."
-			
+			print "I don't understand. Try typing 1, 2, or 3."
+
+#if argument is True then session() starts taking input for a new schedule 
+#else if argument is False then session() will display the previous schedule	
 def session(new):
 	if new == True:
 		employee_count = int(raw_input("How many employees are bidding?\n> "))
@@ -56,7 +56,8 @@ def session(new):
 				
 			else:
 				print "I don't understand. Try typing 1 or 2."
-				
+	
+	#displays previous schedule then returns to start()
 	else:
 		with open('Schedule.txt', 'a+') as file:
 			print file.read()
