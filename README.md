@@ -6,6 +6,7 @@ given a list of schedules to choose from for the next quarter.  Each line number
 and everyone writes out a numbered list starting with their most prefered schedule and ending with their least prefered.
 
 Example:
+
 Schedule #----------Preference
 
 1(Mon/Tue off)------3
