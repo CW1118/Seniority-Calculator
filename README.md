@@ -6,17 +6,17 @@ given a list of schedules to choose from for the next quarter.  Each line number
 and everyone writes out a numbered list starting with their most prefered schedule and ending with their least prefered.
 
 Example:
-Schedule #                  Preference
+Schedule #            Preference
 
-1(Mon/Tue off)              3
+1(Mon/Tue off)        3
 
-2(Tue/Wed off)              4
+2(Tue/Wed off)        4
 
-3(Sat/Sun off)              1(Most Prefered)
+3(Sat/Sun off)        1(Most Prefered)
 
-4(Sun/Mon off)              2
+4(Sun/Mon off)        2
 
-5(Wed/Thur off)             5(Least Prefered)
+5(Wed/Thur off)       5(Least Prefered)
 
 So the #1 person in seniority always gets their 1st choice then everyone afterward only gets their most prefered choice
 if it hasn't already been taken by someone higher in seniority than them.  If their 1st choice has already been taken
