@@ -76,7 +76,7 @@ def assign():
 	for employee in range(0, employee_count):
 		choice_num = 0		
 	
-		while len(final) < employee_count:	
+		while True:	
 			choice = find(employee, choice_num)
 
 			if choice in schedules:
