@@ -7,13 +7,13 @@ and everyone writes out a numbered list starting with their most prefered schedu
 
 Example:
 
-Schedule #----------Preference
+Schedule #-----------Preference
 
 1(Mon/Tue off)------3
 
 2(Tue/Wed off)------4
 
-3(Sat/Sun off)------1(Most Prefered)
+3(Sat/Sun off)--------1(Most Prefered)
 
 4(Sun/Mon off)------2
 
