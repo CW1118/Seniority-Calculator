@@ -61,9 +61,7 @@ def session(new):
 	
 	#displays previous schedule then returns to start()
 	else:
-		with open('Schedule.txt', 'a+') as file:
-			print file.read()
-			start()
+		schedule(False)
 
 #finds a choice within the nested lists of picks
 def find(employee, choice_num):
@@ -93,6 +91,22 @@ def assign():
 				choice_num += 1	
 				continue
 				
-	print '\n'.join(final)
+	schedule(True)
+
+#if the 'new' argument is True then schedule() will open a txt file and record the schedule	then print it
+#if the 'new' argument is False then schedule() will print the last recorded schedule
+def schedule(new):
+	if new == True:		
+		with open('Schedule.txt', 'w') as file:
+			file.write('\n'.join(final))
 			
+		print '\n' + '\n'.join(final) + '\n'
+		start()
+			
+	else:
+		#a+ mode is used so if the file doesn't exist is will be created
+		with open('Schedule.txt', 'a+') as file:
+			print '\n' + file.read() + '\n'
+			start()
+				
 start()
