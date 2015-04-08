@@ -7,10 +7,15 @@ and everyone writes out a numbered list starting with their most prefered schedu
 
 Example:
 Schedule #                  Preference
+
 1(Mon/Tue off)              3
+
 2(Tue/Wed off)              4
+
 3(Sat/Sun off)              1(Most Prefered)
+
 4(Sun/Mon off)              2
+
 5(Wed/Thur off)             5(Least Prefered)
 
 So the #1 person in seniority always gets their 1st choice then everyone afterward only gets their most prefered choice
