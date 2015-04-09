@@ -32,6 +32,11 @@ def session(new):
 	if new == True:
 		global employee_count
 		employee_count = int(raw_input("How many employees are bidding?\n> "))
+		#clearing all lists in case they still hold values
+		del names[:]
+		del schedules[:]
+		del picks[:]
+		del final[:]
 		
 		#adding names and schedule numbers to an empty list
 		for i in range(1, employee_count + 1):
@@ -85,7 +90,7 @@ def assign():
 				#breaks out of the while loop to move on to the next employee
 				break
 
-			elif int(choice) not in range(1, len(names)):
+			elif int(choice) not in range(1, len(names) + 1):
 				#if a choice is out of range of available schedules an error is raised
 				raise Exception("%s's choice of %s is out of the range of available schedules to bid for." % (names[employee], choice))
 		
