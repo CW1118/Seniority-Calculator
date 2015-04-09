@@ -41,7 +41,7 @@ def session(new):
 		#adding employee picks to list	
 		for i in range(0, employee_count):
 			#converts selections to list with map function
-			picks.append(map(str, raw_input("Enter %s's selections in order without any spaces:\n> " % names[i])))
+			picks.append(map(str, raw_input("Enter %s's top %d selection(s) in order without any spaces:\n> " % (names[i], i + 1))))
 			
 		print "Would you like to save and assign schedules?"
 		print "1) Yes"
