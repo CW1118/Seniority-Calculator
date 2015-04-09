@@ -67,7 +67,7 @@ def session(new):
 def find(employee, choice_num):
 	nested_list = picks[employee]
 	choice = nested_list[choice_num]
-	return choice
+	return choice	
 		
 #goes through employees 1 by 1 and assigns schedules
 def assign():	
@@ -83,7 +83,11 @@ def assign():
 				#deletes choice from schedules list so it cant be assigned again
 				schedules.remove(choice)
 				#breaks out of the while loop to move on to the next employee
-				break	
+				break
+
+			elif int(choice) not in range(1, len(names)):
+				#if a choice is out of range of available schedules an error is raised
+				raise Exception("%s's choice of %s is out of the range of available schedules to bid for." % (names[employee], choice))
 		
 			else:
 				#if the employees 1st choice is taken this will add one to 
