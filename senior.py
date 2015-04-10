@@ -6,7 +6,7 @@ picks = []	#nested list of each employees choices
 final = []	#list of each employee and their awarded schedule
 
 def start():
-	print "What would you like to do?"
+	print "\nWhat would you like to do?\n"
 	print "1) Start a new session"
 	print "2) View most recent session"
 	print "3) Quit"
@@ -31,7 +31,7 @@ def start():
 def session(new):
 	if new == True:
 		global employee_count
-		employee_count = int(raw_input("How many employees are bidding?\n> "))
+		employee_count = int(raw_input("\nHow many employees are bidding?\n> "))
 		#clearing all lists in case they still hold values
 		del names[:]
 		del schedules[:]
@@ -40,16 +40,16 @@ def session(new):
 		
 		#adding names and schedule numbers to an empty list
 		for i in range(1, employee_count + 1):
-			names.append(raw_input("Enter employee number %d's name: " % i))
+			names.append(raw_input("\nEnter employee number %d's name: " % i))
 			schedules.append(str(i))
 			
 		#adding employee picks to list	
 		for i in range(0, employee_count):
 			#converts selections to list with map function
-			picks.append(map(str, raw_input("Enter %s's top %d selection(s) in order without any spaces:\n> " % (names[i], i + 1))))
+			picks.append(map(str, raw_input("\nEnter %s's top %d selection(s) in order without any spaces:\n> " % (names[i], i + 1))))
 			
-		print "Would you like to save and assign schedules?"
-		print "1) Yes"
+		print "\nWould you like to save and assign schedules?"
+		print "\n1) Yes"
 		print "2) No"
 		
 		while True:
@@ -92,7 +92,7 @@ def assign():
 
 			elif int(choice) not in range(1, len(names) + 1):
 				#if a choice is out of range of available schedules an error is raised
-				raise Exception("%s's choice of %s is out of the range of available schedules to bid for." % (names[employee], choice))
+				raise Exception("%s's choice of %s is out of the range of available schedules." % (names[employee], choice))
 		
 			else:
 				#if the employees 1st choice is taken this will add one to 
@@ -109,13 +109,14 @@ def schedule(new):
 		with open('Schedule.txt', 'w') as file:
 			file.write('\n'.join(final))
 			
-		print '\n' + '\n'.join(final) + '\n'
+		print '\n' + '\n'.join(final)
 		start()
 			
 	else:
 		#a+ mode is used so if the file doesn't exist is will be created
 		with open('Schedule.txt', 'a+') as file:
-			print '\n' + file.read() + '\n'
-			start()
+			print '\n' + file.read()
+		
+		start()
 				
 start()
