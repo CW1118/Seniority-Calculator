@@ -1,4 +1,5 @@
 from sys import exit
+import os
 
 names = []	#list of each employees name
 schedules = []	#list of each available schedule
@@ -115,7 +116,11 @@ def schedule(new):
 	else:
 		#a+ mode is used so if the file doesn't exist is will be created
 		with open('Schedule.txt', 'a+') as file:
-			print '\n' + file.read()
+		    if os.path.getsize('Schedule.txt') == 0:
+		        print "\nNo schedules found.\n"
+		        
+		    else:
+			    print '\n' + file.read()
 		
 		start()
 				
